@@ -1,0 +1,22 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SingleBlogItem from "../../components/SingleBlogItem.jsx"
+
+export async function getStaticPaths() {
+    const response = await fetch("http://127.0.0.1:1337/api/posts?populate[0]=featuredImage&populate[1]=author.bioimage");
+    const { data } = await response.json();
+
+    return data.map((post) => {
+        return {
+            params: { slug: post.attributes.slug },
+            props: { post: post.attributes },
+        };
+    });
+}
+
+const { post } = Astro.props;
+---
+
+<Layout title={post.title}>
+<SingleBlogItem post={post}/>
+</Layout>
