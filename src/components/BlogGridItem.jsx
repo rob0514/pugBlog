@@ -21,7 +21,7 @@ export default function BlogGridItem({ post }) {
                 <div className="flex justify-between my-4 items-center">
                     <div className="flex space-x-2 items-center overflow-hidden">
                         <img
-                            class="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+                            className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
                             src={
                                 author.data.attributes.bioimage.data.attributes.formats.thumbnail.url
                                     ? `http://localhost:1337${author.data.attributes.bioimage.data.attributes.formats.thumbnail.url}`
@@ -31,10 +31,10 @@ export default function BlogGridItem({ post }) {
                         />
                         <p className="font-medium text-xs text-gray-600 cursor-pointer">{author?.data.attributes.name}</p>
                     </div>
-                    <div class="inline-flex rounded-md ">
+                    <div className="inline-flex rounded-md ">
                         <a
                             href={`/posts/${slug}`}
-                            class="inline-flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-400"
+                            className="inline-flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-400"
                         >
                             Read article
                         </a>
